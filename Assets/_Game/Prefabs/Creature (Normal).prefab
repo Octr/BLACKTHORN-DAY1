@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 3884353018762231575}
   - component: {fileID: 6721391653351807521}
   - component: {fileID: 177168978818083876}
+  - component: {fileID: 976103037384309643}
   m_Layer: 0
   m_Name: Creature (Normal)
   m_TagString: Creature
@@ -384,7 +385,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7312476758807463705}
   serializedVersion: 4
-  m_Mass: 0.1
+  m_Mass: 0.08
   m_Drag: 0.05
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -419,7 +420,7 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 1
@@ -476,6 +477,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 976103037384309643}
+        m_TargetAssemblyTypeName: AddForce, Assembly-CSharp
+        m_MethodName: Apply
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 125
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -754,3 +767,16 @@ MonoBehaviour:
   audioSource: {fileID: 6721391653351807521}
   minPitch: 0.6
   maxPitch: 1
+--- !u!114 &976103037384309643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312476758807463705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1439c327c5a844ab8af630abf66756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6641280015147483966}

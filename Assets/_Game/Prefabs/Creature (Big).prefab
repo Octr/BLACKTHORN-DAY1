@@ -640,7 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathAudio: {fileID: 6721391653351807521}
   randomPitch: {fileID: 177168978818083876}
-  hungerValue: 40
+  hungerValue: 10
   rb: {fileID: 6641280015147483966}
   creatureCollider: {fileID: 7759246462440761114}
 --- !u!82 &6721391653351807521
