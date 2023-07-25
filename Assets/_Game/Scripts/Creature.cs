@@ -6,6 +6,7 @@ public class Creature : MonoBehaviour
 {
     [SerializeField] private AudioSource deathAudio;
     [SerializeField] private RandomPitch randomPitch;
+    [SerializeField] private float hungerValue = 10;
     private void Start()
     {
         //Initial Random Color
@@ -24,7 +25,7 @@ public class Creature : MonoBehaviour
         creatureCollider.enabled = false;
         randomPitch.Randomize();
         deathAudio.Play();
-        HungerBar.Instance.IncreaseHunger(5);
+        HungerBar.Instance.IncreaseHunger(hungerValue);
         yield return new WaitForSeconds(3);
         CreatureSpawner.Instance.currentSpawns--;
         Destroy(gameObject);

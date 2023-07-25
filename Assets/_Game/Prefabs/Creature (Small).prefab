@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 6721391653351807521}
   - component: {fileID: 177168978818083876}
   m_Layer: 0
-  m_Name: D20
+  m_Name: Creature (Small)
   m_TagString: Creature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 7312476758807463705}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2605963284622416455}
@@ -498,8 +498,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4172301743994751709}
-  minPitch: 0.8
-  maxPitch: 1.2
+  minPitch: 1.2
+  maxPitch: 1.5
 --- !u!82 &4172301743994751709
 AudioSource:
   m_ObjectHideFlags: 0
@@ -640,6 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathAudio: {fileID: 6721391653351807521}
   randomPitch: {fileID: 177168978818083876}
+  hungerValue: 10
   creatureCollider: {fileID: 7759246462440761114}
 --- !u!82 &6721391653351807521
 AudioSource:

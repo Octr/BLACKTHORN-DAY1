@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// This script handles spawning creatures at random spawn points
+/// </summary>
 public class CreatureSpawner : Singleton<CreatureSpawner>
 {
-    [SerializeField] GameObject creaturePrefab;
+    [SerializeField] GameObject[] creaturePrefabs;
     [SerializeField] private float spawnTime = 3;
     public int currentSpawns;
     [SerializeField] private int maxSpawns = 10;
@@ -26,7 +28,8 @@ public class CreatureSpawner : Singleton<CreatureSpawner>
         currentSpawns++;
         int seed = Random.Range(0, spawnPoints.Length);
         Transform randomSpawn = spawnPoints[seed];
-        Instantiate(creaturePrefab, randomSpawn);
+        seed = Random.Range(0, creaturePrefabs.Length);
+        Instantiate(creaturePrefabs[seed], randomSpawn);
         isSpawning = false;
 
     }
