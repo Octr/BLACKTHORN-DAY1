@@ -29,7 +29,7 @@ public class HungerBar : Singleton<HungerBar>
             if (currentValue <= 0f)
             {
                 // Game over logic here
-                Debug.Log("Game Over");
+                GameManager.Instance.state = GameState.END;
             }
         }
     }

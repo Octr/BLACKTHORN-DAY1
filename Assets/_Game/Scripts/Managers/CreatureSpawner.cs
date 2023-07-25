@@ -18,6 +18,7 @@ public class CreatureSpawner : Singleton<CreatureSpawner>
     {
         if (isSpawning) return;
         if (currentSpawns >= maxSpawns) return;
+        if(GameManager.Instance.state == GameState.END) return;
         StartCoroutine(Spawn());
     }
 
