@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Creature : MonoBehaviour
 {
+    [SerializeField] private AudioSource deathAudio;
+    [SerializeField] private RandomPitch randomPitch;
+    private void Start()
+    {
+        //Initial Random Color
+        GetComponent<ColorChange>().StartColorTransition();
+    }
+
     [SerializeField] private Collider creatureCollider;
     public void Die()
     {
@@ -14,7 +22,10 @@ public class Creature : MonoBehaviour
     {
         //animator.SetTrigger("Dead");
         creatureCollider.enabled = false;
+        randomPitch.Randomize();
+        deathAudio.Play();
         yield return new WaitForSeconds(3);
+        CreatureSpawner.Instance.currentSpawns--;
         Destroy(gameObject);
     }
 }
