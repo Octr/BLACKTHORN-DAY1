@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344204848921066597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.75, y: 10.05, z: -7.5}
+  m_LocalPosition: {x: -5.75, y: 8.57, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816854966292298517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.75, y: 10.05, z: -7.5}
+  m_LocalPosition: {x: 5.75, y: 8.57, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112,7 +112,6 @@ MonoBehaviour:
   creaturePrefabs:
   - {fileID: 7312476758807463705, guid: f73ff9c8585198e4b87c85f4ef534c38, type: 3}
   - {fileID: 7312476758807463705, guid: fbb67d939fc964a4c91f4a4600a6676f, type: 3}
-  - {fileID: 7312476758807463705, guid: 42da232dd6258fb448e95924da7a88ed, type: 3}
   spawnTime: 3
   currentSpawns: 0
   maxSpawns: 5
@@ -144,7 +143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8480637638499447703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.05, z: 0}
+  m_LocalPosition: {x: 0, y: 8.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
