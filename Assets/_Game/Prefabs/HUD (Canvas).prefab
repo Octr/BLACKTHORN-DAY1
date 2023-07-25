@@ -196,7 +196,7 @@ MonoBehaviour:
   maxValue: 100
   currentValue: 100
   tickRate: 5
-  increaseSpeed: 1
+  increaseSpeed: 2
   hungerFillImage: {fileID: 6133406188921519836}
 --- !u!1 &8607214917997344730
 GameObject:
