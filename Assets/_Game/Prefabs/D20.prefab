@@ -272,6 +272,8 @@ GameObject:
   - component: {fileID: 6457210182027139324}
   - component: {fileID: 8554761741989777507}
   - component: {fileID: 4172301743994751709}
+  - component: {fileID: 8009588991636819905}
+  - component: {fileID: 3757876707305639751}
   m_Layer: 0
   m_Name: D20
   m_TagString: Untagged
@@ -436,6 +438,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8009588991636819905}
+        m_TargetAssemblyTypeName: ColorChange, Assembly-CSharp
+        m_MethodName: StartColorTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onCollisionStay:
     m_PersistentCalls:
       m_Calls: []
@@ -553,3 +567,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8009588991636819905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312476758807463705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9b926a93ce8824ea47ccd1b51fedb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goRenderer: {fileID: 1235057611854723094}
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
+  startColor: {r: 0, g: 0, b: 0, a: 0}
+  transitionSpeed: 1
+  colorTag: {fileID: 3757876707305639751}
+--- !u!114 &3757876707305639751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312476758807463705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb068c908b3fdb743b1748c5c4de10c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
