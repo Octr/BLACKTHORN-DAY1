@@ -28,6 +28,7 @@ public class Creature : MonoBehaviour
         deathAudio.Play();
         rb.AddForce(new Vector3(0,-100,0));
         HungerBar.Instance.IncreaseHunger(hungerValue);
+        ScoreUI.Instance.UpdateScore(1);
         yield return new WaitForSeconds(3);
         CreatureSpawner.Instance.currentSpawns--;
         Destroy(gameObject);
