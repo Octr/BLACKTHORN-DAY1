@@ -1,15 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-/// <summary>
-/// Script for managing a Hunger Bar that constantly ticks down and can be increased by a value with a smooth animation.
-/// When the gauge reaches 0, it triggers the "Game Over" logic, but the player has a chance to keep increasing it to avoid the game over state.
-/// </summary>
-public class HungerBar : MonoBehaviour
+public class HungerBar : Singleton<HungerBar>
 {
     [SerializeField] private float maxValue = 100f;
     [SerializeField] private float currentValue = 100f;
     [SerializeField] private float tickRate = 1f; // How much the gauge decreases per second
     [SerializeField] private float increaseSpeed = 10f; // Speed at which the gauge increases
+    [SerializeField] private Image hungerFillImage; // Reference to the UI Image component
 
     private bool isPaused = false;
     private float targetValue;
@@ -26,6 +24,7 @@ public class HungerBar : MonoBehaviour
         {
             currentValue -= tickRate * Time.deltaTime;
             currentValue = Mathf.Clamp(currentValue, 0f, maxValue);
+            UpdateHungerFillImage();
 
             if (currentValue <= 0f)
             {
@@ -33,14 +32,14 @@ public class HungerBar : MonoBehaviour
                 Debug.Log("Game Over");
             }
         }
-        else
+    }
+
+    private void UpdateHungerFillImage()
+    {
+        if (hungerFillImage != null)
         {
-            // Increase the gauge value smoothly
-            if (currentValue < targetValue)
-            {
-                currentTimer += Time.deltaTime;
-                currentValue = Mathf.Lerp(currentValue, targetValue, currentTimer / increaseSpeed);
-            }
+            float fillAmount = currentValue / maxValue;
+            hungerFillImage.fillAmount = fillAmount;
         }
     }
 
@@ -58,9 +57,24 @@ public class HungerBar : MonoBehaviour
     /// <param name="value">The amount to increase the Hunger Bar by.</param>
     public void IncreaseHunger(float value)
     {
-        isPaused = true;
-        targetValue = Mathf.Clamp(targetValue + value, 0f, maxValue);
-        currentTimer = 0f;
-        isPaused = false;
+        targetValue = Mathf.Clamp(currentValue + value, 0f, maxValue);
+        StartCoroutine(IncreaseHungerOverTime());
+    }
+
+    private System.Collections.IEnumerator IncreaseHungerOverTime()
+    {
+        float initialValue = currentValue;
+        float timer = 0f;
+
+        while (timer < increaseSpeed)
+        {
+            timer += Time.deltaTime;
+            currentValue = Mathf.Lerp(initialValue, targetValue, timer / increaseSpeed);
+            UpdateHungerFillImage();
+            yield return null;
+        }
+
+        currentValue = targetValue;
+        UpdateHungerFillImage();
     }
 }

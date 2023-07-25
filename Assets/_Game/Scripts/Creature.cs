@@ -24,6 +24,7 @@ public class Creature : MonoBehaviour
         creatureCollider.enabled = false;
         randomPitch.Randomize();
         deathAudio.Play();
+        HungerBar.Instance.IncreaseHunger(5);
         yield return new WaitForSeconds(3);
         CreatureSpawner.Instance.currentSpawns--;
         Destroy(gameObject);
