@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7660109311565929899}
   - component: {fileID: 5145153445159581519}
   m_Layer: 0
-  m_Name: Image (1)
+  m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.5531211, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 4380255008930318743}
   - component: {fileID: 7916012145467531205}
   - component: {fileID: 8262840286158477509}
+  - component: {fileID: 4355840899613164290}
   m_Layer: 0
   m_Name: Face (Canvas)
   m_TagString: Untagged
@@ -180,6 +181,31 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4355840899613164290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276786455694713780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199ac6d5d9b5a6545bf9d2bf093aafe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyes:
+  - {fileID: 21300000, guid: e2a1a7388e423af4f97d34b06c4a31c4, type: 3}
+  - {fileID: 21300000, guid: f215981dcf2da714b8aa4165569da08a, type: 3}
+  - {fileID: 21300000, guid: 03d3faed1c9cd31449cbf863bb5cf2b7, type: 3}
+  - {fileID: 21300000, guid: 86580337633645441a4a964e38f0fa68, type: 3}
+  mouths:
+  - {fileID: 21300000, guid: 0578b990fae9a7445ba8783eaa8fe545, type: 3}
+  - {fileID: 21300000, guid: 08ced830429cd6e4b8ce80769d4e126e, type: 3}
+  - {fileID: 21300000, guid: 565cb66f13620cc41a21aee27da638b7, type: 3}
+  - {fileID: 21300000, guid: 5db9d21292953a145825aa62f9af01b2, type: 3}
+  - {fileID: 21300000, guid: 8d02e57a2bfad5545af536623c2b5cf1, type: 3}
+  eye: {fileID: 7342529656297655843}
+  mouth: {fileID: 5145153445159581519}
 --- !u!1 &6858348979367818716
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +218,7 @@ GameObject:
   - component: {fileID: 3692371978988809262}
   - component: {fileID: 7342529656297655843}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.6714115, b: 1, a: 1}
+  m_Color: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
