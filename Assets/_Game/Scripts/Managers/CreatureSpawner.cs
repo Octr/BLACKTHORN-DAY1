@@ -8,6 +8,7 @@ public class CreatureSpawner : Singleton<CreatureSpawner>
     [SerializeField] private float spawnTime = 3;
     public int currentSpawns;
     [SerializeField] private int maxSpawns = 10;
+    [SerializeField] Transform[] spawnPoints;
 
     private bool isSpawning;
 
@@ -23,7 +24,9 @@ public class CreatureSpawner : Singleton<CreatureSpawner>
         isSpawning = true;
         yield return new WaitForSeconds(spawnTime);
         currentSpawns++;
-        Instantiate(creaturePrefab, transform);
+        int seed = Random.Range(0, spawnPoints.Length);
+        Transform randomSpawn = spawnPoints[seed];
+        Instantiate(creaturePrefab, randomSpawn);
         isSpawning = false;
 
     }
