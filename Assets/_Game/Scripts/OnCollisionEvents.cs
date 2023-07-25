@@ -8,6 +8,8 @@ public class OnCollisionEvents : MonoBehaviour
 {
     enum CollisionType { Enter, Stay, Exit };
 
+    public Collision collisionData;
+
     [SerializeField] private bool requiresTag;
     [SerializeField] private string requiredTag;
 
@@ -18,18 +20,22 @@ public class OnCollisionEvents : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (requiresTag && !collision.gameObject.CompareTag(requiredTag)) return;
+        collisionData = collision;
         onCollisionEnter.Invoke();
     }
 
     private void OnCollisionStay(Collision collision)
     {
         if (requiresTag && !collision.gameObject.CompareTag(requiredTag)) return;
+        collisionData = collision;
         onCollisionStay.Invoke();
+        
     }
 
     private void OnCollisionExit(Collision collision)
     {
         if (requiresTag && !collision.gameObject.CompareTag(requiredTag)) return;
+        collisionData = collision;
         onCollisionExit.Invoke();
     }
 

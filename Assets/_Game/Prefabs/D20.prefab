@@ -274,9 +274,10 @@ GameObject:
   - component: {fileID: 4172301743994751709}
   - component: {fileID: 8009588991636819905}
   - component: {fileID: 3757876707305639751}
+  - component: {fileID: 3884353018762231575}
   m_Layer: 0
   m_Name: D20
-  m_TagString: Untagged
+  m_TagString: Creature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiresTag: 1
-  requiredTag: Player
+  requiredTag: Ground
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls:
@@ -597,3 +598,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+--- !u!114 &3884353018762231575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312476758807463705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ec17dbf360899479cf2b74fb33867e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creatureCollider: {fileID: 7759246462440761114}
